@@ -64,6 +64,10 @@
 .footer-bottom{margin-top:28px;padding-bottom:12px;font-size:10px}
 .system-panel{overflow:hidden}
 .main-stage{background:var(--paper)}
+.skills-sticky{background:var(--paper)}
+.skills-sticky>.section-heading{flex:0 0 auto;min-height:clamp(82px,8vw,132px);align-items:center}
+.skills-sticky>.section-heading>span{display:block;line-height:1;align-self:center}
+.skills-window{min-height:0}
 .site-footer{position:relative;isolation:isolate;background:var(--accent);box-shadow:none}
 .site-footer::before{content:'';position:absolute;inset:24px 2.8vw 76px;border-radius:10px;background:var(--ink);z-index:-1}
 .footer-display{padding-bottom:clamp(36px,3vw,64px)}
