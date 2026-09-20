@@ -36,7 +36,13 @@ useEffect(()=>{
    gsap.fromTo('.project-image img',{scale:1.15},{scale:1,ease:'none',scrollTrigger:{trigger:'.project-editorial',start:'top bottom',end:'bottom bottom',scrub:true}});
    gsap.from('.footer-display',{yPercent:35,ease:'none',scrollTrigger:{trigger:'.site-footer',start:'top bottom',end:'bottom bottom',scrub:true}});
    const track=document.querySelector('.skills-track');
-   gsap.to(track,{x:()=>-Math.max(0,track.scrollWidth-track.parentElement.clientWidth),ease:'none',scrollTrigger:{trigger:'.skills-sequence',start:'top top',end:'bottom bottom',scrub:true,invalidateOnRefresh:true}});
+   const focusPanels=gsap.utils.toArray('.focus-panel');
+   const setActivePanel=progress=>{
+    const activeIndex=Math.round(progress*(focusPanels.length-1));
+    focusPanels.forEach((panel,index)=>panel.classList.toggle('is-active',index===activeIndex));
+   };
+   setActivePanel(0);
+   gsap.to(track,{x:()=>-Math.max(0,track.scrollWidth-track.parentElement.clientWidth),ease:'none',scrollTrigger:{trigger:'.skills-sequence',start:'top top',end:'bottom bottom',scrub:true,invalidateOnRefresh:true,onUpdate:self=>setActivePanel(self.progress)}});
   });
   let alive=true;document.fonts.ready.then(()=>{if(alive)ScrollTrigger.refresh()});
   return()=>{alive=false;ctx.revert();gsap.ticker.remove(tick);smooth.destroy()};
