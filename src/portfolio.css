@@ -74,3 +74,13 @@
 .footer-bottom{position:relative;min-height:52px;margin-top:24px;padding-top:18px;color:var(--ink);align-items:center}
 @media(max-width:760px){.site-footer::before{inset:16px 3vw 76px;border-radius:8px}.footer-display{padding-bottom:36px}}
 @media(max-width:760px){.site-footer{padding:48px 7vw 24px;box-shadow:inset 3vw 0 var(--accent),inset -3vw 0 var(--accent),inset 0 16px var(--accent)}.footer-grid{grid-template-columns:1fr 1fr;min-height:0;gap:32px 24px}.footer-grid nav{font-size:20px}.footer-education{margin-top:28px;font-size:10px}.footer-display{font-size:23vw;margin-top:55px}.footer-monogram{font-size:30px}}
+
+/* Keep the focus panel inside the same grid row as the image at wide widths. */
+@media(min-width:1101px){
+ .system-panel{min-height:0;height:100%}
+ .system-status{min-height:0;display:flex;flex-direction:column;padding:clamp(18px,1.6vw,30px) 2.8vw;overflow:hidden}
+ .system-status h2{flex:none;margin-bottom:clamp(8px,.65vw,14px)}
+ .system-status>a{flex:1;min-height:0;align-items:center;padding:0;line-height:1.1}
+ .system-data{flex:none;margin:clamp(8px,.8vw,16px) 0 clamp(4px,.5vw,10px)}
+ .system-status>p:last-child{flex:none}
+}
