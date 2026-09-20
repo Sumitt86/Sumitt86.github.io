@@ -31,7 +31,7 @@ useEffect(()=>{
    gsap.from('.contact-section h2',{y:35,opacity:0,duration:.7,ease:'power3.out',scrollTrigger:{trigger:'.contact-section',start:'top 85%',once:true}});
    gsap.timeline({scrollTrigger:{trigger:'.intro-sequence',start:'top top',end:'bottom bottom',scrub:true,invalidateOnRefresh:true}})
     .to('.name-panel',{yPercent:-100,duration:.8,ease:'none'},0)
-    .fromTo('.board-photo',{scale:1.12,yPercent:5},{scale:1,yPercent:-3,duration:1,ease:'none'},0);
+    .fromTo('.board-photo',{scale:1.12},{scale:1,duration:1,ease:'none'},0);
    gsap.utils.toArray('.project-list article').forEach(article=>{gsap.from(article.children,{y:36,opacity:0,stagger:.08,ease:'none',scrollTrigger:{trigger:article,start:'top 92%',end:'top 55%',scrub:true}})});
    gsap.fromTo('.project-image img',{scale:1.15},{scale:1,ease:'none',scrollTrigger:{trigger:'.project-editorial',start:'top bottom',end:'bottom bottom',scrub:true}});
    gsap.from('.footer-display',{yPercent:35,ease:'none',scrollTrigger:{trigger:'.site-footer',start:'top bottom',end:'bottom bottom',scrub:true}});
